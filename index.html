@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindNotes</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- PAGE 1 -->
+  <section id="notepadPage" class="page active">
+
+    <header class="topbar futuristic">
+      <div class="logo">MN</div>
+      <h1>NOTE PAD</h1>
+      <button class="gear">⚙</button>
+    </header>
+
+    <div class="notepad-layout">
+
+      <aside class="sidebar">
+        <div class="category-header">
+          <span>Categories</span>
+          <button id="addCategoryBtn">+</button>
+        </div>
+
+        <div id="categoryList"></div>
+      </aside>
+
+      <main class="notes-area">
+        <div id="notesContainer"></div>
+      </main>
+
+    </div>
+
+    <button class="fab" id="newNoteBtn">+</button>
+
+  </section>
+
+  <!-- NOTE EDITOR -->
+  <section id="editorPage" class="page">
+
+    <header class="topbar futuristic">
+      <button id="backBtn">←</button>
+      <h1>EDITOR</h1>
+      <button id="saveBtn">💾</button>
+    </header>
+
+    <div class="editor-tools">
+      <button onclick="formatText('bold')">B</button>
+      <button onclick="formatText('italic')">I</button>
+      <button onclick="insertLink()">🔗</button>
+      <button onclick="insertImage()">🖼</button>
+    </div>
+
+    <div id="editor" contenteditable="true"></div>
+
+  </section>
+
+  <!-- PAGE 2 -->
+  <section id="calendarPage" class="page">
+
+    <header class="topbar futuristic">
+      <h1>CALENDAR</h1>
+      <button class="gear">⚙</button>
+    </header>
+
+    <div class="calendar-header">
+      <button id="prevMonth">◀</button>
+      <h2 id="monthTitle"></h2>
+      <button id="nextMonth">▶</button>
+    </div>
+
+    <div class="calendar-grid" id="calendarGrid"></div>
+
+    <div class="events-panel">
+      <div class="events-header">
+        <h3>Events</h3>
+        <button id="addEventBtn">+</button>
+      </div>
+
+      <div id="eventsList"></div>
+    </div>
+
+  </section>
+
+  <!-- PAGE 3 -->
+  <section id="mindMapPage" class="page">
+
+    <header class="topbar futuristic">
+      <h1>MIND MAPS</h1>
+      <button class="gear">⚙</button>
+    </header>
+
+    <div class="mindmap-top">
+      <input type="text" placeholder="Search mind maps..."/>
+      <select>
+        <option>Newest</option>
+        <option>Oldest</option>
+      </select>
+    </div>
+
+    <div class="toolbar">
+      <button id="addNodeBtn">+ Node</button>
+      <button id="connectBtn">Connect</button>
+      <button id="deleteNodeBtn">Delete</button>
+    </div>
+
+    <div id="mindCanvas"></div>
+
+  </section>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+
+    <button class="nav-btn active" data-page="notepadPage">
+      📝
+      <span>Notes</span>
+    </button>
+
+    <button class="nav-btn" data-page="mindMapPage">
+      🧠
+      <span>Maps</span>
+    </button>
+
+    <button class="nav-btn" data-page="calendarPage">
+      📅
+      <span>Calendar</span>
+    </button>
+
+  </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
